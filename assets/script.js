@@ -18,11 +18,20 @@ buttons.forEach((button) => {
     } else if (currentButton.contains("increase")) {
       counter++;
       counterNumber.innerText = counter;
+
       console.log(`incr`);
     } else {
       counter = 0;
       console.log("reset");
     }
     counterNumber.innerText = counter;
+    if (Math.floor(Number(counterNumber.innerText)) < 0) {
+      `ye`;
+      counterNumber.style.color = "red";
+    } else if (Math.floor(Number(counterNumber.innerText)) > 0) {
+      counterNumber.style.color = "green";
+    } else {
+      counterNumber.style.color = "black";
+    }
   });
 });
